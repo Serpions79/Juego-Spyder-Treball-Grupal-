@@ -79,6 +79,8 @@ if buscarObjeto("Machete")==1:
         print("Has utilizado el Machete... pero el ciervo a escapado")
     elif decision==2:
         print("Bien hecho, como podrias matar a un ciervo tu solo con un machete?")
+else:
+    print("David continua")
 print("Mira has encontrado otra casa abandonada")
 print("Quieres ir a investigar esa casa?")
 print("1 SI 2 NO")
@@ -115,10 +117,72 @@ if decision==1:
             if decision==1:
                 print("No me lo puedo creer es un Pikachu pero esto no tiene sentido esas cosas no son reales")
                 print("FIN DE LA PARTE 2")
+                print("Parece que pikachu te esta guiando a lo mas profundo de la cueva")
+                print("1 para seguir 2 para no seguir")
+                decision=int(input())
+                if decision==1:
+                    print("Ves una especie de rectangulo lleno de luz y ves como pikachu entra a esa cosa")
+                    print("1 para ir a esa especie de rectangulo lleno de luz 2 para quedarte en la cueva y esperar a que pase el tornado")
+                    decision=int(input())
+                    if decision==1:
+                        print("Entras y ves una especie de campo lleno de...POKEMONS")
+                        print("Ves a una persona a la lejos que se esta acercando")
+                        print("1 para quedarte a esperarlo 2 para huir")
+                        decision=int(input())
+                        if decision==1:
+                            print("Esa persona resulta ser un señor de unos 50 años y quiere que te quedes a dormir a su casa")
+                            print("Señor: Por la noche este lugar es muy peligroso puedes quedarte a dormir esta noche en mi hogar sin problemas")
+                            print("1 para aceptar 2 para rechazar")
+                            decision=int(input())
+                            if decision==1:
+                                print("Aceptas y entraste a su casa")
+                                print("Resulta que su casa esta llena de objetos extraños")
+                                print("Señor: Mi nombre es OAK")
+                                print("FIN DE LA 3R PARTE")
+                            elif decision==2:
+                                print("Corres a toda velocidad y entras en un bosque")
+                                print("En ese bosque ves que hay 2 caminos")
+                                print("1 izquierda 2 derecha")
+                                decision=int(input())
+                                if decision==1:
+                                   print("Ves una especie de figara extraña y va hacia ti")
+                                   print("1 quedarte quieto 2 huir")
+                                   decision=int(input())
+                                   if decision==1:
+                                       print("Es pikachu y te ha traido una baya")
+                                       print("Y el señor de antes estaba detras tuyo y te deice que el es OAK EL PROFESOR POKEMON")
+                                       print("FIN DE LA 3r PARTE")
+                    elif decision==2:
+                        print("Te quedas en la cueva y escuchas un rugido")
+                        print("Es un CHARIZARD")
+                        print("1 para huir 2 para quedarte quieto")
+                        decision=int(input())
+                        if decision==1:
+                            print("1 para esconder 2 para correr")
+                            decision=int(input())
+                            if decision==1:
+                                print("Te escondes y el CHARIZARD se ha ido")
+                            elif decision==2:
+                                print("El CHARIZARD es mas rapido y te mata")
+                        elif decision==2:
+                            print("CHARIZARD se te queda mirando fijamente y decide no hacerte nada y se va")
+                            print("CHARIZARD parece que tiene una especie de chip en la cabeza")
+                            print("Fuiste a la salida de esa cueva y ves que el tornado se fue")
+                            print("Al parecer CHARIZARD te sigue")
+                            print("1 dejarle que te siga 2 decirle que se vaya")
+                            decision=int(input())
+                            if decision==1:
+                                print("CHARIZARD se siente feliz")
+                                print("FIN DE LA PARTE 3")
+                            elif decision==2:
+                                print("CHARIZARD se enfada y te mata")
+                                print("Fuiste la comida para CHARIZARD fin de la partida")
             elif decision==2:
                 print("Pareze que ya se fue el tornado")
                 print("Que raro el pozo a desaparecido me pregunto que habra pasado")
                 print("FIN DE LA PARTE 2")
+                print("Hay una luz al final de este camino que brilla demasiado")
+                print("David continua")
         elif decision==2:
             print("Voz extraña: Ayudanos necesitamos tu ayuda")
             print("Voz extraña: Necesito que te tires al pozo")
@@ -128,6 +192,7 @@ if decision==1:
                 print("TE HAS TIRADO AL POZO")
                 print("Puedes observar como la oscuridad de la parte profunda del pozo poco a poco se esta haciendo mas clara")
                 print("FIN DE LA PARTE 2")
+                print("David continua")
             elif decision==2:
                 print("Corres como puedes hacia la cueva pero el tornado te pillo")
                 print("HAS MUERTO")
@@ -145,12 +210,15 @@ if decision==1:
             print("Es un Charmander pero eso no era un Pokemon")
             print("¿Que hace esta cosa aqui acaso no era un videojuego?")
             print("FIN DE LA PARTE 2")
+            print("David continua")
         elif decision==2:
             print("Que acaba de pasar HAY UN MURO DE FUEGO DELANTE")
             print("FIN DE LA PARTE 2")
+            print("David continua")
 elif decision==2:
     print("Te das cuenta que el pozo desaparecio magicamente")
     print("FIN DE LA PARTE 2")
+    print("David continua")
 """
 RULETA DE LA SUERTE :)
 Buscar una funcion que nos de un numero aleatorio del 1 al 100 (solo en el caso de utilizar porcentajes) 
