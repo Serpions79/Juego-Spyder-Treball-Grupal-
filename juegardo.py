@@ -2,7 +2,7 @@ import random
 
 class Personaje:
     nombre=""
-    vida=0
+    vida=15
     ataque_actual=0
     defensa_actual=0
     objetos=[]
@@ -46,8 +46,17 @@ class Enemigo:
         self.ataque = ataque
         self.defensa = defensa
         
-
-
+def Combate(personaje,enemigos):
+   turno_player = 0
+   num_enemigos = 0
+   if turno_player == 0:
+       while num_enemigos < len(enemigos):
+           if enemigos[num_enemigos] > personaje.defensa_actual:
+               resultado = - personaje.defensa_actual + enemigos[num_enemigos].ataque
+               personaje.vida = personaje.vida - resultado
+               print(enemigos[num_enemigos].nombre + "Te ha atacado y te ha hecho " + resultado + " de daño.")
+           else:
+               print("No te ha hecho daño") 
 monedero=Objeto("monedero",0,0,0,11)
 
 enemigos=[]
@@ -94,6 +103,7 @@ numerorandom=random.uniform(0,100)
 if 30>=numerorandom:
     enemigos.append(Enemigo("Lobo",5,6,4))
     print("Oh no te estan persiguiendo unos lobos salvajes y es de noche")
+    
     if player.buscarObjeto("Bengala",player.objetos)==1:
         print("Teniendo la bengala puedes utilizarla, Quieres utilizarla ahora? 1 si 2 no") 
         decision=int(input())
@@ -101,7 +111,8 @@ if 30>=numerorandom:
            print("Has utilizado la bengala y los lobos se han ido")
            
         elif decision==2:
-            print("Como no has utilizado la Bengala PREPArATE PARA COMBATIR")
+            print("Como no has utilizado la Bengala PREPARATE PARA COMBATIR")
+            enemigos.append(Enemigo("Lobo",5,6,4))
     else:
         print("Como no puedes hacer nada los lobos te han dejado a media vida PREPARATE POR QUE LA VAS A PASAR MAL")
         print("EMPIEZA EL COMBATE")
@@ -271,5 +282,7 @@ MEJORAR LA CLASE OBJETO (Hacer que el objeto sea equipable o no) Separar el obje
 Y añadir tipos en los objetos 
 añadir la clase enemigo (Nombre, vida, ataque, defensa,)
 Añadir una clase jugador para añadir a nosotros (Ayuda)
+
+Hacer el turno del jugador, que tenga 2 opciones si es luchar es lo mismo que el enemigo pero saber a que enemigo hacerle daño, o la otra opcion que es huir.
 
 """
