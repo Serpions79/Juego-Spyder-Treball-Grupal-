@@ -12,11 +12,11 @@ class Personaje:
         self.ataque_actual = ataque_actual
         self.defensa_actual = defensa_actual
         self.objetos = objetos
-    def buscarObjeto(nombre,objetos):
+    def buscarObjeto(self,nombre):
         encontrado=0
         i=0
-        while i<len(objetos) and encontrado==0:
-            if objetos[i].nombre ==nombre:
+        while i<len(self.objetos) and encontrado==0:
+            if self.objetos[i].nombre ==nombre:
                 encontrado=1
             else:
                 i=i+1
@@ -81,7 +81,7 @@ elif decision==2:
      print("Has escogido la bengala magnifica idea ") 
      player.objetos.append(Objeto("Bengala",2,0,5,7))
 elif decision==3:
-     print("Has escogido el machete, si te soy sincero yo tambien lo habria escogido ")
+     print("Has escogido el machete, si te soy sincero yo tambien lo habria escogido")
      player.objetos.append(Objeto("Machete",6,0,5,4))
 print("Ahora que ya estamos listos vamonos")
 print("4 HORAS DESPUES")
@@ -104,7 +104,7 @@ if 30>=numerorandom:
     enemigos.append(Enemigo("Lobo",5,6,4))
     print("Oh no te estan persiguiendo unos lobos salvajes y es de noche")
     
-    if player.buscarObjeto("Bengala",player.objetos)==1:
+    if player.buscarObjeto("Bengala")==1:
         print("Teniendo la bengala puedes utilizarla, Quieres utilizarla ahora? 1 si 2 no") 
         decision=int(input())
         if decision==1:
@@ -117,7 +117,7 @@ if 30>=numerorandom:
         print("Como no puedes hacer nada los lobos te han dejado a media vida PREPARATE POR QUE LA VAS A PASAR MAL")
         print("EMPIEZA EL COMBATE")
 print("Ya llevas 3 horas y aun no has comido pero mira lo que veo es un ciervo")
-if player.buscarObjeto("Machete",player.objetos)==1:
+if player.buscarObjeto("Machete")==1:
     print("Puedes utilizar el machete para comer el ciervo (1) o puedes seguir caminando y buscar otra comida (2)")
     decision=int(input())
     if decision==1:
@@ -125,7 +125,7 @@ if player.buscarObjeto("Machete",player.objetos)==1:
     elif decision==2:
         print("Bien hecho, como podrias matar a un ciervo tu solo con un machete?")
 else:
-    print("David continua")
+    print("No tienes un machete para cazarlo, ya sera la proxima vez")
 print("Mira has encontrado otra casa abandonada")
 print("Quieres ir a investigar esa casa?")
 print("1 SI 2 NO")
