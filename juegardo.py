@@ -47,16 +47,24 @@ class Enemigo:
         self.defensa = defensa
         
 def Combate(personaje,enemigos):
-   turno_player = 0
-   num_enemigos = 0
-   if turno_player == 0:
-       while num_enemigos < len(enemigos):
-           if enemigos[num_enemigos] > personaje.defensa_actual:
-               resultado = - personaje.defensa_actual + enemigos[num_enemigos].ataque
-               personaje.vida = personaje.vida - resultado
-               print(enemigos[num_enemigos].nombre + "Te ha atacado y te ha hecho " + resultado + " de daño.")
-           else:
-               print("No te ha hecho daño") 
+   
+   while True:   
+       print("Tu vida actual es " + str (personaje.vida))
+       turno_player = 0
+       num_enemigos = 0
+       if turno_player == 0:
+           while num_enemigos < len(enemigos):
+               if enemigos[num_enemigos].ataque > personaje.defensa_actual:
+                   resultado = - personaje.defensa_actual + enemigos[num_enemigos].ataque
+                   personaje.vida = personaje.vida - resultado
+                   print(enemigos[num_enemigos].nombre + "Te ha atacado y te ha hecho " + str(resultado) + " de daño.")
+               else:
+                   print("No te ha hecho daño") 
+               num_enemigos=num_enemigos + 1
+           print("Te ha queado " + str (personaje.vida))
+           turno_player = 1
+       else:
+          print("sdfghjkl")
 monedero=Objeto("monedero",0,0,0,11)
 
 enemigos=[]
@@ -98,7 +106,7 @@ print("INSERTAR MUSICA DE VIDEOJUEGOS")
 print("Oh vaya estas aqui aun")
 print("Bueno te dejo jugar la segunda parte")
 print("MUSICA DE ACCION")
-numerorandom=random.uniform(0,100)
+numerorandom=random.uniform(0,30)
 
 if 30>=numerorandom:
     enemigos.append(Enemigo("Lobo",5,6,4))
@@ -113,6 +121,8 @@ if 30>=numerorandom:
         elif decision==2:
             print("Como no has utilizado la Bengala PREPARATE PARA COMBATIR")
             enemigos.append(Enemigo("Lobo",5,6,4))
+            Combate(player,enemigos)
+            
     else:
         print("Como no puedes hacer nada los lobos te han dejado a media vida PREPARATE POR QUE LA VAS A PASAR MAL")
         print("EMPIEZA EL COMBATE")
