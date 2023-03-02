@@ -47,10 +47,10 @@ class Enemigo:
         self.defensa = defensa
         
 def Combate(personaje,enemigos):
-   
+   turno_player = 0
    while True:   
        print("Tu vida actual es " + str (personaje.vida))
-       turno_player = 0
+      
        num_enemigos = 0
        if turno_player == 0:
            while num_enemigos < len(enemigos):
@@ -64,7 +64,20 @@ def Combate(personaje,enemigos):
            print("Te ha queado " + str (personaje.vida))
            turno_player = 1
        else:
-          print("sdfghjkl")
+          turno_player = 1
+          print("Que quieres hacer? 1 para atacar, 2 para huir ")
+          decision=int(input())
+          if decision==1:
+              print("Ataque")
+          elif decision==2:
+              numerorandom=random.uniform(0,100)
+              if 20>=numerorandom:
+                  print("Has escapado")
+                  break
+              else:
+                  print("No has podido huir *risas enlatadas*")
+                  turno_player = 0
+
 monedero=Objeto("monedero",0,0,0,11)
 
 enemigos=[]
@@ -126,6 +139,8 @@ if 30>=numerorandom:
     else:
         print("Como no puedes hacer nada los lobos te han dejado a media vida PREPARATE POR QUE LA VAS A PASAR MAL")
         print("EMPIEZA EL COMBATE")
+        enemigos.append(Enemigo("Lobo",5,6,4))
+        Combate(player,enemigos)
 print("Ya llevas 3 horas y aun no has comido pero mira lo que veo es un ciervo")
 if player.buscarObjeto("Machete")==1:
     print("Puedes utilizar el machete para comer el ciervo (1) o puedes seguir caminando y buscar otra comida (2)")
