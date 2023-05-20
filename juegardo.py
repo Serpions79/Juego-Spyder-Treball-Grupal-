@@ -47,7 +47,7 @@ class Enemigo:
         self.defensa = defensa
         
 def Combate(personaje,enemigos):
-   turno_player = 0
+   turno_player = 1
    while True:   
        print("Tu vida actual es " + str (personaje.vida))
       
